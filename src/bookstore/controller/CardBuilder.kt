@@ -5,14 +5,14 @@ class CardBuilder {
 
     fun build(book: Book) = Card(div(), div(), div(), div(), img(), button()).let { card ->
         card.apply {
-            bind(book, image, title, price, description, button)
-            applyStyle(container, image, title, price, description, button)
+            bind(book)
+            applyStyle()
             container.append(image, title, description, price, button)
         }
         card.container
     }
 
-    private fun bind(book: Book, image: _IMAGE_, title: _DIV_, price: _DIV_, description: _DIV_, button: _BUTTON_) {
+    private fun Card.bind(book: Book) = apply {
         image.src = book.coverUrl
         title.innerHTML = book.title
         price.innerHTML = book.price
@@ -25,7 +25,7 @@ class CardBuilder {
         }
     }
 
-    private fun applyStyle(container: _DIV_, image: _IMAGE_, title: _DIV_, price: _DIV_, description: _DIV_, button: _BUTTON_) {
+    private fun Card.applyStyle() = apply {
         container.addClass(CARD, CARD_SHADOW)
         image.addClass(COVER_IMAGE)
         title.addClass(TITLE, FLOAT_LEFT)
