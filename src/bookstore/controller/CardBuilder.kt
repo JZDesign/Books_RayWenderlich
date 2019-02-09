@@ -3,7 +3,7 @@ import kotlin.dom.addClass
 
 class CardBuilder {
 
-    fun build(book: Book) = Card(div(), div(), div(), div(), img(), button()).let { card ->
+    fun build(book: Book) = Card().let { card ->
         card.apply {
             bind(book)
             applyStyle()
