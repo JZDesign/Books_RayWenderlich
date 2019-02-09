@@ -12,7 +12,6 @@ class BookStorePage(private val presenter: BookStoreContract.Presenter) : BookSt
 
     // @formatter:off
     override fun showLoader() { loader.style.visibility = VISIBLE }
-
     override fun hideLoader() { loader.style.visibility = HIDDEN }
     // @formatter:on
 
