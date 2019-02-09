@@ -12,4 +12,6 @@ This is my following along with a tutorial from the [Ray Wenderlich](https://www
 
 ## Notes
 
-To make it easier to read I added a few `typealias`'s delineated by underscores (a non-typical naming convention) and a bunch of constants that don't NEED to be there. It looks nicer though. 
+This is primarily an example for a few people I know learning Kotlin. Some of the things done in the project are not the best choice but are done as an illustration of what _can_ be done.
+
+I added a few `typealias`'s delineated by underscores (a non-typical naming convention) and a bunch of constants and extended functions that don't NEED to be there. It looks nicer though. 
