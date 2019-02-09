@@ -12,4 +12,4 @@ This is my following along with a tutorial from the [Ray Wenderlich](https://www
 
 ## Notes
 
-To make it easier to read I added a few `typealias`'s and a bunch of constants that don't NEED to be there. It looks nicer though. 
+To make it easier to read I added a few `typealias`'s delineated by underscores (a non-typical naming convention) and a bunch of constants that don't NEED to be there. It looks nicer though. 
