@@ -24,6 +24,12 @@ const val DIV        = "div"
 const val IMG        = "img"
 const val BUTTON     = "button"
 
+// Actions
 const val CLICK      = "click"
+
+//CRUD
+const val GET        = "GET"
+
+// URL
 val API_URL          = js("getApiUrl()") as String
 // @formatter:on

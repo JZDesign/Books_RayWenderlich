@@ -1,12 +1,7 @@
-import kotlin.browser.document
 import kotlin.browser.window
 import kotlin.dom.addClass
 
 class CardBuilder {
-
-    private fun div() = document.createElement(DIV) as _DIV_
-    private fun img() = document.createElement(IMG) as _IMAGE_
-    private fun button() = document.createElement(BUTTON) as _BUTTON_
 
     fun build(book: Book) = Card(div(), div(), div(), div(), img(), button()).let { card ->
         card.apply {
@@ -24,9 +19,9 @@ class CardBuilder {
         description.innerHTML = book.description
         button.apply {
             innerHTML = BUTTON_TEXT
-            addEventListener(CLICK, {
-                window.open(book.url)
-            })
+            // @formatter:off
+            addEventListener(CLICK, { window.open(book.url) })
+            // @formatter:on
         }
     }
 
