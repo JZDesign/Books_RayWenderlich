@@ -19,7 +19,7 @@ class BookStorePresenter : BookStoreContract.Presenter {
 
     private fun getAsync(url: String, callback: (String) -> Unit) {
         XMLHttpRequest().apply {
-            open("GET", url)
+            open(GET, url)
             onload = { if (successful()) callback.invoke(responseText) }
             send()
         }
