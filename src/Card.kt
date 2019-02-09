@@ -1,6 +1,6 @@
-data class Card(val container: DIV,
-                val title: DIV,
-                val description: DIV,
-                val price: DIV,
-                val image: IMAGE,
-                val button: BUTTON)
+data class Card(val container: _DIV_,
+                val title: _DIV_,
+                val description: _DIV_,
+                val price: _DIV_,
+                val image: _IMAGE_,
+                val button: _BUTTON_)
