@@ -4,9 +4,9 @@ import kotlin.dom.addClass
 
 class CardBuilder {
 
-    private fun div() = document.createElement(_DIV) as DIV
-    private fun img() = document.createElement(_IMG) as IMAGE
-    private fun button() = document.createElement(_BUTTON) as BUTTON
+    private fun div() = document.createElement(DIV) as _DIV_
+    private fun img() = document.createElement(IMG) as _IMAGE_
+    private fun button() = document.createElement(BUTTON) as _BUTTON_
 
     fun build(book: Book) = Card(div(), div(), div(), div(), img(), button()).let { card ->
         card.apply {
@@ -17,7 +17,7 @@ class CardBuilder {
         card.container
     }
 
-    private fun bind(book: Book, image: IMAGE, title: DIV, price: DIV, description: DIV, button: BUTTON) {
+    private fun bind(book: Book, image: _IMAGE_, title: _DIV_, price: _DIV_, description: _DIV_, button: _BUTTON_) {
         image.src = book.coverUrl
         title.innerHTML = book.title
         price.innerHTML = book.price
@@ -30,35 +30,13 @@ class CardBuilder {
         }
     }
 
-    private fun applyStyle(container: DIV, image: IMAGE, title: DIV, price: DIV, description: DIV, button: BUTTON) {
+    private fun applyStyle(container: _DIV_, image: _IMAGE_, title: _DIV_, price: _DIV_, description: _DIV_, button: _BUTTON_) {
         container.addClass(CARD, CARD_SHADOW)
         image.addClass(COVER_IMAGE)
         title.addClass(TITLE, FLOAT_LEFT)
         description.addClass(DESCRIPTION, FLOAT_LEFT)
         price.addClass(PRICE, FLOAT_LEFT)
         button.addClass(DETAILS, RIPPLE, FLOAT_RIGHT)
-    }
-
-    companion object {
-        // @formatter:off
-        // content
-        const val BUTTON_TEXT = "view details"
-        const val FLOAT_LEFT  = "float-left"
-        // style classes
-        const val FLOAT_RIGHT = "float-right"
-        const val CARD        = "card"
-        const val CARD_SHADOW = "card-shadow"
-        const val COVER_IMAGE = "cover-image"
-        const val TITLE       = "text-title"
-        const val DESCRIPTION = "text-description"
-        const val PRICE       = "text-price"
-        const val DETAILS     = "view-details"
-        const val RIPPLE      = "ripple"
-        // elements
-        const val _DIV        = "div"
-        const val _IMG        = "img"
-        const val _BUTTON     = "button"
-        // @formatter:on
     }
 
 }
