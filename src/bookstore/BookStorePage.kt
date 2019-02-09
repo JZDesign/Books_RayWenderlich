@@ -1,8 +1,8 @@
 import kotlin.browser.document
 
 class BookStorePage(private val presenter: BookStoreContract.Presenter) : BookStoreContract.View {
-    private val loader = document.getElementById(LOADER) as _DIV_
-    private val content = document.getElementById(CONTENT) as _DIV_
+    private val loader = document.getDiv(LOADER)
+    private val content = document.getDiv(CONTENT)
 
     override fun showBooks(books: List<Book>) = books.forEach { book ->
         CardBuilder().build(book).also { card ->
