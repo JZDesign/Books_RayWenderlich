@@ -16,9 +16,11 @@ class BookStorePage(private val presenter: BookStoreContract.Presenter) : BookSt
     override fun hideLoader() { loader.style.visibility = HIDDEN }
     // @formatter:on
 
-    fun show() = presenter.apply {
-        attach(this@BookStorePage)
-        loadBooks()
+    fun show() {
+        presenter.apply {
+            attach(this@BookStorePage)
+            loadBooks()
+        }
     }
 
 }
