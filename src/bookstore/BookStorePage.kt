@@ -4,16 +4,16 @@ class BookStorePage(private val presenter: BookStoreContract.Presenter) : BookSt
     private val loader = document.getDiv(LOADER)
     private val content = document.getDiv(CONTENT)
 
-    override fun showBooks(books: List<Book>) = books.forEach { book ->
-        CardBuilder().build(book).also { card ->
-            content.appendChild(card)
+    override fun showBooks(books: List<Book>) {
+        books.forEach { book ->
+            CardBuilder().build(book).also { card ->
+                content.appendChild(card)
+            }
         }
     }
 
-    // @formatter:off
     override fun showLoader() { loader.style.visibility = VISIBLE }
     override fun hideLoader() { loader.style.visibility = HIDDEN }
-    // @formatter:on
 
     fun show() {
         presenter.apply {

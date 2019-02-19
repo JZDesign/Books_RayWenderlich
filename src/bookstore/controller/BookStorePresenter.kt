@@ -2,9 +2,8 @@ import org.w3c.xhr.XMLHttpRequest
 
 class BookStorePresenter : BookStoreContract.Presenter {
     private lateinit var view: BookStoreContract.View
-    // @formatter:off
+
     override fun attach(view: BookStoreContract.View) { this.view = view }
-    // @formatter:on
 
     override fun loadBooks() {
         view.showLoader()

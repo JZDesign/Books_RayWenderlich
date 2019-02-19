@@ -19,9 +19,7 @@ class CardBuilder {
         description.innerHTML = book.description
         button.apply {
             innerHTML = BUTTON_TEXT
-            // @formatter:off
             addEventListener(CLICK, { window.open(book.url) })
-            // @formatter:on
         }
     }
 
